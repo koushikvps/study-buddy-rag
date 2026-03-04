@@ -194,6 +194,46 @@ hr { border-color: #21262d !important; }
     color: #58a6ff !important;
     background: rgba(88,166,255,0.1) !important;
 }
+/* ── File uploader — force dark theme ── */
+[data-testid="stFileUploader"] {
+    background: #161b22 !important;
+    border: 1px dashed #30363d !important;
+    border-radius: 12px !important;
+}
+[data-testid="stFileUploadDropzone"] {
+    background: #161b22 !important;
+    color: #e6edf3 !important;
+}
+[data-testid="stFileUploadDropzone"] > div {
+    background: #161b22 !important;
+}
+
+/* ── Fix white box inside uploader ── */
+.st-emotion-cache-1erivf3,
+.st-emotion-cache-taue2i,
+[data-testid="stFileUploader"] section {
+    background: #161b22 !important;
+    border: none !important;
+}
+
+/* ── Uploader text colors ── */
+[data-testid="stFileUploader"] span,
+[data-testid="stFileUploader"] p,
+[data-testid="stFileUploader"] small {
+    color: #8b949e !important;
+}
+
+/* ── Browse files button ── */
+[data-testid="stFileUploader"] button {
+    background: #21262d !important;
+    color: #e6edf3 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 8px !important;
+}
+[data-testid="stFileUploader"] button:hover {
+    border-color: #58a6ff !important;
+    color: #58a6ff !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
