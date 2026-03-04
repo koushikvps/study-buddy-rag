@@ -1,0 +1,8 @@
+cat > requirements.txt << 'EOF'
+streamlit
+groq
+chromadb
+sentence-transformers
+pypdf
+python-dotenv
+EOF

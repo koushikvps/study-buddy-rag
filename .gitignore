@@ -1,0 +1,18 @@
+cat > .gitignore << 'EOF'
+# Secret keys - NEVER upload these
+.env
+
+# Virtual environment - too large
+venv/
+
+# ChromaDB data - rebuilt on deploy
+chroma_db/
+
+# Mac system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+EOF
