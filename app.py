@@ -375,171 +375,72 @@ with st.sidebar:
 # PAGE: HOME
 # ══════════════════════════════════════════════════════════════
 if page == "🏠  Home":
+
+    st.markdown("<div style='padding: 40px 40px 0;'>", unsafe_allow_html=True)
+
+    # Hero
     st.markdown("""
-    <style>
-    .hero-section {
-        padding: 80px 64px 48px;
-        max-width: 860px;
-    }
-    .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(88,166,255,0.1);
-        border: 1px solid rgba(88,166,255,0.25);
-        color: #58a6ff;
-        padding: 6px 16px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        margin-bottom: 28px;
-    }
-    .hero-title {
-        font-family: 'Syne', sans-serif;
-        font-size: 64px;
-        font-weight: 800;
-        line-height: 1.05;
-        color: #e6edf3;
-        margin-bottom: 16px;
-    }
-    .hero-title span {
-        background: linear-gradient(135deg, #58a6ff 0%, #a371f7 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .hero-sub {
-        font-size: 18px;
-        color: #8b949e;
-        line-height: 1.7;
-        margin-bottom: 48px;
-        max-width: 560px;
-    }
-    .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-        margin-bottom: 48px;
-    }
-    .feature-card {
-        background: #161b22;
-        border: 1px solid #21262d;
-        border-radius: 14px;
-        padding: 24px 20px;
-        transition: border-color 0.2s;
-    }
-    .feature-card:hover { border-color: #58a6ff; }
-    .feature-icon { font-size: 28px; margin-bottom: 12px; }
-    .feature-title {
-        font-family: 'Syne', sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        color: #e6edf3;
-        margin-bottom: 6px;
-    }
-    .feature-desc { font-size: 13px; color: #8b949e; line-height: 1.5; }
-    .steps-section { margin-bottom: 48px; }
-    .steps-title {
-        font-family: 'Syne', sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        color: #e6edf3;
-        margin-bottom: 20px;
-    }
-    .step-row {
-        display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 16px;
-    }
-    .step-num {
-        width: 32px; height: 32px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #58a6ff, #a371f7);
-        color: white;
-        font-weight: 700;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        margin-top: 2px;
-    }
-    .step-content h4 {
-        font-size: 15px;
-        font-weight: 600;
-        color: #e6edf3;
-        margin-bottom: 2px;
-    }
-    .step-content p { font-size: 13px; color: #8b949e; line-height: 1.5; }
-    </style>
-
-    <div class="hero-section">
-        <div class="hero-badge">✦ AI-Powered Document Assistant</div>
-        <div class="hero-title">Chat with your<br><span>PDF documents.</span></div>
-        <div class="hero-sub">Upload any PDF and ask questions in plain English. Study Buddy finds the most relevant sections and gives you precise, grounded answers instantly.</div>
-
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-title">Lightning Fast</div>
-                <div class="feature-desc">Powered by Groq's ultra-fast inference. Answers in under 2 seconds.</div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <div class="feature-title">Grounded Answers</div>
-                <div class="feature-desc">Responses based strictly on your document. No hallucinations.</div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <div class="feature-title">Source Transparency</div>
-                <div class="feature-desc">See exactly which sections of your PDF were used to answer.</div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <div class="feature-title">Llama 3.3 70B</div>
-                <div class="feature-desc">State-of-the-art open-source LLM by Meta. Enterprise-grade intelligence.</div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💾</div>
-                <div class="feature-title">Vector Search</div>
-                <div class="feature-desc">ChromaDB finds semantically similar content, not just keywords.</div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🆓</div>
-                <div class="feature-title">100% Free</div>
-                <div class="feature-desc">Entirely open-source stack. No API costs, no subscriptions.</div>
-            </div>
-        </div>
-
-        <div class="steps-section">
-            <div class="steps-title">How it works</div>
-            <div class="step-row">
-                <div class="step-num">1</div>
-                <div class="step-content">
-                    <h4>Upload your PDF</h4>
-                    <p>Use the sidebar to upload any text-based PDF — textbooks, research papers, reports, or documentation.</p>
-                </div>
-            </div>
-            <div class="step-row">
-                <div class="step-num">2</div>
-                <div class="step-content">
-                    <h4>Document gets indexed</h4>
-                    <p>Your PDF is split into chunks, converted to embeddings, and stored in a vector database for instant search.</p>
-                </div>
-            </div>
-            <div class="step-row">
-                <div class="step-num">3</div>
-                <div class="step-content">
-                    <h4>Ask anything</h4>
-                    <p>Switch to the Chat page and ask questions. The AI finds the most relevant sections and answers precisely.</p>
-                </div>
-            </div>
-        </div>
+    <div style='display:inline-block; background:rgba(88,166,255,0.1); border:1px solid rgba(88,166,255,0.25); color:#58a6ff; padding:6px 16px; border-radius:20px; font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:24px;'>
+        ✦ AI-Powered Document Assistant
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown("""
+    <div style='font-family:Syne,sans-serif; font-size:52px; font-weight:800; line-height:1.1; color:#e6edf3; margin-bottom:16px;'>
+        Chat with your<br>
+        <span style='background:linear-gradient(135deg,#58a6ff,#a371f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent;'>PDF documents.</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div style='font-size:17px; color:#8b949e; line-height:1.7; margin-bottom:40px; max-width:560px;'>
+        Upload any PDF and ask questions in plain English. Study Buddy finds the most relevant sections and gives you precise, grounded answers instantly.
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Feature cards using columns
+    st.markdown("### ✨ Features")
+    col1, col2, col3 = st.columns(3)
+
+    features = [
+        ("⚡", "Lightning Fast", "Powered by Groq's ultra-fast inference. Answers in under 2 seconds."),
+        ("🎯", "Grounded Answers", "Responses based strictly on your document. No hallucinations."),
+        ("🔍", "Source Transparency", "See exactly which PDF sections were used to answer."),
+        ("🧠", "Llama 3.3 70B", "State-of-the-art open-source LLM by Meta."),
+        ("💾", "Vector Search", "ChromaDB finds semantically similar content, not just keywords."),
+        ("🆓", "100% Free", "Entirely open-source stack. No API costs, no subscriptions."),
+    ]
+
+    for i, (icon, title, desc) in enumerate(features):
+        col = [col1, col2, col3][i % 3]
+        with col:
+            st.markdown(f"""
+            <div style='background:#161b22; border:1px solid #21262d; border-radius:14px; padding:20px; margin-bottom:16px;'>
+                <div style='font-size:26px; margin-bottom:10px;'>{icon}</div>
+                <div style='font-family:Syne,sans-serif; font-size:15px; font-weight:700; color:#e6edf3; margin-bottom:6px;'>{title}</div>
+                <div style='font-size:13px; color:#8b949e; line-height:1.5;'>{desc}</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # How it works
+    st.markdown("### 🔧 How it works")
+    steps = [
+        ("1", "Upload your PDF", "Use the sidebar to upload any text-based PDF — textbooks, research papers, or reports."),
+        ("2", "Document gets indexed", "Your PDF is split into chunks, converted to embeddings, and stored in ChromaDB."),
+        ("3", "Ask anything", "Switch to Chat and ask questions. The AI finds relevant sections and answers precisely."),
+    ]
+    for num, title, desc in steps:
+        st.markdown(f"""
+        <div style='display:flex; gap:16px; align-items:flex-start; margin-bottom:16px; background:#161b22; border:1px solid #21262d; border-radius:12px; padding:18px 20px;'>
+            <div style='width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,#58a6ff,#a371f7); color:white; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0;'>{num}</div>
+            <div>
+                <div style='font-size:15px; font-weight:600; color:#e6edf3; margin-bottom:4px;'>{title}</div>
+                <div style='font-size:13px; color:#8b949e; line-height:1.5;'>{desc}</div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("</div>", unsafe_allow_html=True)
 # ══════════════════════════════════════════════════════════════
 # PAGE: CHAT
 # ══════════════════════════════════════════════════════════════
