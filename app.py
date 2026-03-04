@@ -146,6 +146,54 @@ hr { border-color: #21262d !important; }
     border-radius: 10px !important;
     border: none !important;
 }
+/* ── Sidebar radio buttons (navigation) ── */
+[data-testid="stSidebar"] .stRadio label {
+    color: #e6edf3 !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+}
+[data-testid="stSidebar"] .stRadio label:hover {
+    background: #21262d !important;
+    color: #58a6ff !important;
+}
+[data-testid="stSidebar"] .stRadio [data-testid="stMarkdownContainer"] p {
+    color: #e6edf3 !important;
+    font-size: 15px !important;
+}
+
+/* ── Sidebar all text ── */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] div {
+    color: #e6edf3 !important;
+}
+
+/* ── Chat input text while typing ── */
+[data-testid="stChatInput"] textarea {
+    color: #e6edf3 !important;
+    background: #161b22 !important;
+    caret-color: #58a6ff !important;
+}
+[data-testid="stChatInput"] textarea::placeholder {
+    color: #8b949e !important;
+}
+
+/* ── Chat input container ── */
+[data-testid="stBottom"] {
+    background: #0d1117 !important;
+    border-top: 1px solid #21262d !important;
+    padding: 16px 40px !important;
+}
+
+/* ── Radio button selected state ── */
+[data-testid="stSidebar"] .stRadio [aria-checked="true"] + div label {
+    color: #58a6ff !important;
+    background: rgba(88,166,255,0.1) !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
